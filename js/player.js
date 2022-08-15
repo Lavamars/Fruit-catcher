@@ -5,7 +5,7 @@ class Player {
         this.name = null;
         this.score =0;
         
-        this.rank = null ;
+        this.rank = 0 ;
     }
 
     getCount() {
@@ -43,14 +43,11 @@ class Player {
         })
     }
 
-    
-
     static updatePlayerAtEnd(rank){
-        database.ref("").update({
+        database.ref("/").update({
             playerAtEnd : rank
         })
     }
-
 
     
 }

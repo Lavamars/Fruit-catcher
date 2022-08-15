@@ -73,13 +73,11 @@ class Game{
                  }
                 
                 if(player.score>=5){
-                    player.rank = player.rank+1;
+                    player.rank += 1;
                     Player.updatePlayerAtEnd(player.rank);
-
-                  
                     player.update();
                     this.showRank();
-                    gameState = 2; 
+                 gameState = 2; 
 
                 }
                  
@@ -122,15 +120,14 @@ class Game{
                               
                           }
                           
-                      }
+                        }
                   }
                 
 
          
          
         
-         
-
+                
     }
     showRank() {
         swal({
@@ -142,6 +139,28 @@ class Game{
             confirmButtonText: "Ok"
           });
         }
+            
 
 
-}
+       
+
+        gameOver() {
+        //     fill the white color
+        //  print the gameover message
+        fill('white')
+        text('Game Over💀', 300, 150)
+        scale = 2
+        
+
+        }
+            
+
+
+
+
+            end(){
+               console.log("Game Ended");
+               console.log(player.rank)
+               this.gameOver();
+            }
+        }
