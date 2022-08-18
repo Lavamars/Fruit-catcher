@@ -43,23 +43,18 @@ class Form{
             this.greeting.style('color', 'white');
             this.greeting.style('font-size', '100px');
         });
+
         this.reset.mousePressed(() => {
-           
-              database.ref("/").set({
-                playersAtEnd : 0,
-                playerCount: 0, 
-                gameState: 0,
-                players: null
-
-                  //set the intial value for carsAtEnd,playerCount,gameState,players
-                 
-                });
-                //reload() the window
-                window.location.reload();
-              });
-            }
+            player.updateCount(0);
+            game.update(0);
 
 
 
-          }
-          
+            var playerInfoRef = database.ref('players');
+            playerInfoRef.remove();
+
+            
+        });
+
+    }
+}
